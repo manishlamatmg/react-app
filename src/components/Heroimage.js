@@ -15,7 +15,7 @@ const Heroimage = () => {
         <p>Elderly Care And Monitoring System</p>
         <h1>ECMS</h1>
         <div>
-            <Link to="/services" className="btn">Services</Link>
+            <Link to="/plans" className="btn">PLANS</Link>
             <Link to="/contact" className="btn btn-light">Contact</Link>
         </div>
       </div>
