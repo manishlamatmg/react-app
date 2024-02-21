@@ -27,5 +27,5 @@ const Work = () => {
     </div>
   )
 }
-
+/*solta*/
 export default Work
