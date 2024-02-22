@@ -5,7 +5,11 @@ import About from "./routes/About"
 import Plans from "./routes/Plans"
 import Services from "./routes/Services"
 import Contact from "./routes/Contact"
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom'
+import Login from "./components/Login/Loginpage.js";
+
+
+
 
 function App() {
   return (
@@ -16,6 +20,7 @@ function App() {
       <Route path="/services" element={<Services />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/loginPage" element={<Login/>}/>
 
     </Routes>
     </>

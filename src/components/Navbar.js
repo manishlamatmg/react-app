@@ -40,6 +40,9 @@ window.addEventListener("scroll", changeColor);
                       <li>
                       <Link to="/contact">Contact</Link> 
                       </li>
+                      <li>
+                        <Link to = "/loginPage">Login</Link>
+                      </li>
                       </ul>  
                       
       
