@@ -2,79 +2,103 @@
 
 /* Styles for the form on the left side */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    width: 100vh;
-  }
-  
-  .login-form {
-    width: 340px;
-    height: 460px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    background-color: #f9f9f9;
-    margin-right: 120px; /* Align to the left */
-    margin-left: 0; /* Align to the left */
-  }
-  
-  .login-form h2 {
-    margin-bottom: 20px;
-  }
-  
-  .login-form input {
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .login-form button {
-    width: 100%;
-    padding: 10px;
-    background-color: #63cf7e; /* Light green color */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .login-form button:hover {
-    background-color: #4ca16c; /* Darker shade of green on hover */
-  }
-  
-  
-  /* Styles for the links */
-  .form-links {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .form-links a {
-    color: #63cf7e;
-    text-decoration: none;
-  }
-  
-  .form-links a:hover {
-    text-decoration: underline;
-    color: #63cf7e; /* green on hover */
-  }
-  
-  .form-links button:hover {
-    background-color: #4ca16c;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
 
-  
-  .image-container {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .image-container img {
-    max-width: 100%;
-    margin-bottom: 10px;
-  }
+.form-container {
+  max-width: 4
+}
+
+.login-form {
+  margin: 0 auto;
+  max-width: 400px;
+  flex: 1;
+  /* max-width: 400px; */
+  /* width: 340px;
+    height: 460px; */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  background-color: #f9f9f9;
+  /* Align to the left */
+  margin-left: 20;
+  /* Align to the left */
+}
+
+.login-form h2 {
+  margin-bottom: 20px;
+}
+
+.login-form input {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #63cf7e;
+  /* Light green color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #4ca16c;
+  /* Darker shade of green on hover */
+}
+
+
+/* Styles for the links */
+.form-links {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.form-links a {
+  color: #63cf7e;
+  text-decoration: none;
+}
+
+.form-links a:hover {
+  text-decoration: underline;
+  color: #63cf7e;
+  /* green on hover */
+}
+
+.form-links button:hover {
+  background-color: #4ca16c;
+}
+
+
+.image-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(12px);
+  /* margin-bottom: 10px; */
+}

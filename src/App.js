@@ -7,6 +7,7 @@ import Services from "./routes/Services"
 import Contact from "./routes/Contact"
 import { Route, Routes } from 'react-router-dom'
 import Login from "./components/Login/Loginpage.js";
+import SignUpForm from "./components/SignUp/SignUpPage.js";
 
 
 
@@ -21,6 +22,7 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/loginPage" element={<Login/>}/>
+      <Route path = "/sign-up" element ={<SignUpForm/>}/>
 
     </Routes>
     </>
