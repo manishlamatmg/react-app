@@ -1,6 +1,6 @@
 import "./WorkCardStyles.css"
-import WorkCard from "./WorkCard"
-import WorkCardData from "./WorkCardData"
+import WorkCard from "././WorkCard"
+import WorkCardData from "././WorkCardData"
 import React from 'react'
 
 
@@ -27,5 +27,5 @@ const Work = () => {
     </div>
   )
 }
-/*solta*/
+
 export default Work

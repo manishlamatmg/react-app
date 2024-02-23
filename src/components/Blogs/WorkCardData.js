@@ -1,6 +1,6 @@
-import pro1 from "../assets/e.png"
-import pro2 from "../assets/b.png"
-import pro3 from "../assets/a.png"
+import pro1 from "../../assets/e.png"
+import pro2 from "../../assets/b.png"
+import pro3 from "../../assets/a.png"
 const PlanCardData= [
     {
         imgsrc: pro1,

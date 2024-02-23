@@ -23,15 +23,16 @@ window.addEventListener("scroll", changeColor);
       <div className={color ? "header header-bg" : "header"}>
       <Link to="/">
           <h1>
-              ECMS</h1></Link>
+              Elderly Care & Monitoring System</h1></Link>
               <ul className={click ?"nav-menu active" : "nav-menu"}>
                   <li>
                       <Link to="/">Home</Link> 
                       </li>
                      
                       
+                      
                       <li>
-                      <Link to="/plans">Plans</Link> 
+                      <Link to="/blogs">Blogs</Link> 
                       </li>
                       
                       <li>
