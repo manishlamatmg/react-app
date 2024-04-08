@@ -1,8 +1,23 @@
 .plan-heading{
     text-align:center ;
-    padding: 4rem 0 2rem 0;
+    padding: 2rem 0 0rem 0;
+    
+    color: black;
 
 }
+
+.work-container{
+   background-color: rgb(255, 255, 255);
+   
+}
+.b-1{
+    color: black;
+}
+.blogs-butn.active {
+    background-color: black;
+    color: white;
+}
+
 .plan-container{
     max-width: 1140px;
     max-width: 1140px;
@@ -10,22 +25,24 @@
     margin: auto;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-     grid-gap: 40px;
+     grid-gap: 60px;
     padding-bottom: 5rem ;
-    padding: 4rem 0 8rem 0;
-
+    padding: 2rem 0 4rem 0;
+     
 
 }
 .plan-card{
-    background: #7e7171;
+    background: #afafaf;
     overflow: hidden;
-    /* padding: 1.2rem 1rem; */
-    border-radius: 4px;
+    padding: 1.2rem 1rem; 
+    border-radius: 5%;
+    height: 480px;
     
     
 }
 .content-container {
-    padding: 12px;
+    padding: 2px;
+    
 }
 .plan-card img {
     width: 100%;
@@ -34,27 +51,102 @@
   
 }
 .plan-title {
-   color: #fff;
+   color: rgb(0, 0, 0);
    padding: 1rem 0;
 }
 
 .pro-details p{
     padding-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: justify;
+    color: black;
     
 
 }
 
 .pro-btns{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0.5rem 0;
+    
 }
 
 .pro-btns .btns {
     padding: 0.5rem 1rem;
 }
+
+
+.blogs-menu{
+    display: flex;
+    padding: 0 30rem;
+  
+   
+  
+}
+.blogs-menu li {
+     
+    display: flex;
+     padding: 0.5rem;
+   
+     justify-content: space-between;
+   
+     
+    padding-top: 3rem;
+    
+    
+   margin-top: 10px;
+     
+    
+ 
+     
+}
+.blogs-butn {
+    padding: 2px 24px;
+    font-size: 1 rem;
+    
+   
+    border: 1px solid #000000;
+    
+    cursor: pointer;
+    background: transparent;
+   
+    color: #000000;
+    border-radius: 50px;
+   
+  
+  }
+  .blogs-butn:hover{
+    background-color: rgb(109, 109, 109);
+  }
+
+
+ .btn1{
+    padding: 9px 24px;
+    font-size: 3rem;
+    text-transform: uppercase;
+    background: #e74c3c;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    width: 330px;
+   position: relative;
+   left: 590px;
+   height: 5rem;
+   margin-bottom: 4rem;
+    
+    
+    
+ }
+ .btn1:hover{
+    background: rgba(209, 19, 19, 0.2);
+  color: #ffffff;
+  transition: 0.3s;
+  text-decoration: underline;
+ }
 
 @media screen and (max-width: 740px) {
     .plan-container {

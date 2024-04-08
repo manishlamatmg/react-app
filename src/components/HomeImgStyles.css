@@ -1,0 +1,102 @@
+
+.containerr {
+   
+    padding: 12px;
+ 
+   
+    background-color: rgb(241, 239, 239);
+    margin-left: auto;
+   
+   
+      
+      
+      margin-right: auto;
+      display: block;
+      padding-left: 5rem;
+      padding-right: 10rem;
+      margin-top: 40px;
+     position: relative;
+     margin-bottom: 5rem;
+     height: 72vw;
+     
+    
+     
+      
+     
+ 
+    
+  }
+  .containerr img{
+    margin-top: 90px;
+    margin-bottom: 10px;
+    width: 105%;
+    display: block;
+    border-radius: 20px;
+  }
+  
+.myimage{
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    width: 100vw;
+}
+.image-text{
+   text-align: center;
+    bottom: 110vh;
+    left: 5vh;
+    font-size: 45px;
+    position: relative;
+    color:rgb(255, 255, 255);
+}
+.imagetext1{
+  
+  bottom: 109vh;
+  left: 17vh;
+  font-size: 70px;
+  position: relative;
+  margin-top: 2rem;
+  color: rgb(255, 255, 255);
+  
+
+
+}
+.image-p{
+    bottom: 100vh;
+    left: 18vh;
+    font-size: 40px;
+    position: relative;
+
+}
+.btnn1{
+  padding: 8px 24px;
+  font-size: 1.3rem;
+  border-radius: 50px;
+  background: #e74c3c;
+  color: #ffffff;
+  
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 250px;
+  height: 80px;
+  position: relative;
+  bottom: 42vw;
+  left: 8rem;
+  
+  
+}
+.btnn1 img{
+  width: 50px;
+  position: relative;
+  bottom: 5rem;
+  left: 2rem;
+  
+  
+}
+.btnn1:hover{
+
+ background: rgba(209, 19, 19, 0.2);
+  color: #ffffff;
+  transition: 0.3s;
+  text-decoration: underline;
+ }

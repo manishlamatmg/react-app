@@ -2,11 +2,15 @@ import "./FormStyles.css"
 
 import React from 'react'
 
-const Form = () => {
+const FormHome = () => {
   return (
     < div className="formm-container">
-  <div className="formm">
-  <h1>Connect with us !</h1>
+     
+    
+  <div className="formmm">
+    <h1>Connect with us !</h1>
+   
+    
     <form>
       <label>YOUR NAME</label>
       <input type="text"></input>
@@ -26,4 +30,4 @@ const Form = () => {
   
 }
 
-export default Form
+export default FormHome

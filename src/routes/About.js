@@ -5,12 +5,15 @@ import Footer  from '../components/Footer'
 import HeroImg2 from '../components/HeroImg2'
 import AboutContent from '../components/AboutContent'
 
+
 const About = () => {
   return (
     <div>
         <Navbar/>
-        <HeroImg2 heading="ABOUT." text="About this Website"/>
+        <HeroImg2 heading="ABOUT" text="About this Website"/>
+      
         <AboutContent/>
+       
       <Footer/>
       
     </div>

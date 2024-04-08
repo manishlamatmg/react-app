@@ -5,31 +5,60 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 70vh;
   width: 100vw;
   position: relative;
+
 }
 
-.form-container {
-  max-width: 4
-}
 
 .login-form {
-  margin: 0 auto;
-  max-width: 400px;
+  
+  max-width: 500px;
+
   flex: 1;
+  
+
+
   /* max-width: 400px; */
   /* width: 340px;
     height: 460px; */
+    
   padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 15px;
+  border: 1px solid #000000;
+  
   background-color: #f9f9f9;
   /* Align to the left */
   margin-left: 20;
   /* Align to the left */
+  position: relative;
+  height: 600px;
+  
+}
+.input-container{
+  
+  height: 100px;
+  position: relative;
+  
+  
+}
+.form-container{
+ width: 500px;
+ position: relative;
+ top: 4rem;
+
+ 
 }
 
+.login-form h1{
+  margin-top: 20px;
+  color: #000000;
+  text-align: center;
+  position:relative;
+  top: 10px;
+ 
+
+}
 .login-form h2 {
   margin-bottom: 20px;
 }
@@ -51,6 +80,19 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  
+  
+}
+.login-form a{
+  
+  color: #e64141;
+ 
+  position: relative;
+  top: 10px;
+  
+}
+.login-form a:hover{
+  text-decoration: underline;
 }
 
 .login-form button:hover {
@@ -64,16 +106,25 @@
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  position:relative;
+  bottom: 6rem;
+ 
 }
 
 .form-links a {
-  color: #63cf7e;
+  color: #ffffff;
   text-decoration: none;
+  position:relative;
+    left: 11rem;
+    
+    background-color: #4ca16c;
+    border-bottom: #000000;
+  
 }
 
 .form-links a:hover {
   text-decoration: underline;
-  color: #63cf7e;
+  color: #ffffff;
   /* green on hover */
 }
 
@@ -81,13 +132,34 @@
   background-color: #4ca16c;
 }
 
+.signbtn {
+  padding: 9px 30px;
+  font-size: 1rem;
+  position: relative;
+  left: 11rem;
+  top: 12rem;
+  
+  background: transparent;
 
+  border: 1px solid #4ca16c;
+  color: white;
+  background-color: #67dd95;
+ 
+  cursor: pointer;
+  border-radius: 30px;
+
+ 
+}
+.signbtn:hover{
+  background-color:#4ca16c;
+
+}
 .image-container {
   display: flex;
   flex: 1;
   justify-content: center;
   flex-direction: column;
-  height: 100vh;
+  height: 84vh;
   width: 100vw;
   position: absolute;
   top: 0;

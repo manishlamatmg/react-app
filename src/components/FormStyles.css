@@ -1,20 +1,67 @@
 label{
-    color: #fff;
+    color: #000000;
     margin-bottom: 0.5rem;
 }
 
 form{
     display: flex;
     flex-direction: column;
-    padding: 4rem 1rem;
+    padding: 5rem 1rem;
     margin: auto;
     max-width: 600px;
+    position: relative;
+   
 }
+.formmm{
+   
+
+    
+    flex-direction: column;
+    padding: 5rem 1rem;
+    margin: auto;
+    max-width: 600px;
+    position: relative;
+ 
+   
+   
+}
+.formmm h1{
+    color: #d43723;
+    font-size: 50px;
+    
+}
+
 form input, form textarea{
     margin-bottom: 1rem;
+    
     padding: 10px 18px;
     font-size: 1.2rem;
-    background-color: rgba(255,255,255,0.1);
-    border-color:rgba(255,255,255,0.1) ;
-    color: #000000;
+    background-color: rgba(223, 27, 27, 0.1);
+    border-color:rgba(0, 0, 0, 0.1) ;
+    color: #4b54d2;
+    
+}
+
+.formm-container{
+    
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: #fcf2f2;
+    border-color: rgb(0, 0, 0);
+}
+
+
+.formm h1{
+    color: #d43723;
+    position: relative;
+    left: 31vw;
+    top: 2rem;
+}
+.formmm-container{
+
+ margin-top: 100px;
+    margin-bottom: 100px;
+    background-color: #fcf2f2;
+    border-color: rgb(0, 0, 0);
+    
 }

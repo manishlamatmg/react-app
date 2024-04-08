@@ -10,7 +10,7 @@ const AboutContent = () => {
     <div className="about">
         <div className="left">
             <h1>Elderly Care And Monitoring System</h1>
-            <p>The website introduces the elderly care and monitoring system, explaining its purpose, benefits, and how it can improve the quality of life for elderly individuals. </p>
+            <p>This website introduces the elderly care and monitoring system, explaining its purpose, benefits, and how it can improve the quality of life for elderly individuals through its different available resources. </p>
             <Link to="/contact">
                 <button className="btn">CONTACT</button>
             </Link>

@@ -1,7 +1,7 @@
 .footer{
     width: 100%;
     padding: 6rem 0;
-    background-color: rgba(19, 19, 19, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
 }
 .footer-container {
     max-width: 1140px;
@@ -43,9 +43,15 @@
 h4{
     font-size: 1.2rem;
     padding-bottom: 0.7 rem;
+    color: rgb(255, 255, 255);
 }
 p{
     font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+}
+.phone{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 @media screen and (max-width: 640px) {
  

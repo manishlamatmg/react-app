@@ -2,7 +2,10 @@ import "./WorkCardStyles.css"
 
 import React from 'react'
 
+
 import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
+
 
 const WorkCard = (props) => {
   return (
@@ -13,12 +16,18 @@ const WorkCard = (props) => {
         <div className="pro-details">
           <p>{props.text}</p>
           <div className="pro-btns">
-            <NavLink to={props.view} className="btn">VIEW</NavLink>
-            <NavLink to="url.com" className="btn">SOURCE</NavLink>
+            
+            
+            <Link to={`/blog/${props.id}`} className="btn btn-light">Readmore</Link>
+           
           </div>
+          
+
         </div>
       </div>
+      
     </div>
+    
   )
 }
 

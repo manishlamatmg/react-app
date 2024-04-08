@@ -1,0 +1,19 @@
+.title-heading{
+    
+    position: relative;
+    left: 12rem;
+    text-align:left;
+ 
+    font-size: 30px;
+    margin: 70px 0 10px;
+}
+.title-heading h2{
+    margin-bottom: 1rem;
+    position: relative;
+   
+
+}
+
+.title-heading p{
+    color: black;
+}
