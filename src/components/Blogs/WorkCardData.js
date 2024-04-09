@@ -6,7 +6,8 @@ import pro5 from "../../assets/blog5.jpg"
 import pro6 from "../../assets/blog6.jpg"
 import pro7 from "../../assets/blog7.jpg"
 import pro8 from "../../assets/blog8.jpg"
-import pro9 from "../../assets/blog9.jpg"
+import pro9 from "../../assets/blog10.jpg"
+
 
 
 const PlanCardData= [

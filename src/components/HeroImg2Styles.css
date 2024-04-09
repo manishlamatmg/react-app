@@ -38,17 +38,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: absolute;
 }
 
 .hero-img h1{
-    font-size: 2.4rem;
-    color: rgb(255, 255, 255);
+    font-size: 3rem;
+    color: rgb(67, 66, 66);
 }
 
 .hero-img p{
     font-size: 1.4rem;
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(42, 42, 42);
 }
 
 @media screen and (max-width: 640px) {
