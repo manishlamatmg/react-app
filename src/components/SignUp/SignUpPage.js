@@ -37,7 +37,7 @@ const SignUpForm = (props) => {
     }
 
     try {
-      const response = await axiosInstance.post("/api/v1/registration", {
+      const response = await axiosInstance.post("/api/v1/registrations", {
         firstName: formData.name,
         lastName: "",
         email: formData.email,
@@ -77,11 +77,11 @@ const SignUpForm = (props) => {
           position: "absolute",
           top: "12px",
           right: "12px",
-          cursor:"pointer"
+          cursor: "pointer"
         }}>X</span>
         <h2>Sign Up</h2>
         <form onSubmit={handleSubmit} className="signup-form">
-         Full Name <div className="form-group">
+          Full Name <div className="form-group">
             <input
               type="text"
               name="name"
@@ -92,7 +92,7 @@ const SignUpForm = (props) => {
             {errors.name && <span className="error">{errors.name}</span>}
           </div>
           <div className="form-group">
-           Email <input
+            Email <input
               type="email"
               name="email"
               placeholder="Email"
