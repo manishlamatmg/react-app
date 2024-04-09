@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import ServicesCard from "./ServicesCard";
 import "./servicepage.css";
+import axiosInstance from "../../requests";
 
 const ServicesPage = () => {
   const scrollToRef = (ref) => {
@@ -14,34 +15,43 @@ const ServicesPage = () => {
     }, 400);
   };
 
+  const [formOpen, setFormOpen] = useState(false);
+
   // Create a ref for the element you want to scroll to
   const targetRef = useRef(null);
 
   const [formData, setFormData] = useState({
-    age: "",
-    medicine: "",
-    diabetes: "",
-    ageStatus: "",
-    morningMedication: "",
-    afterNoonMedication: "",
-    eveningMedication: "",
+    age: '',
+    medicine: '',
+    bloodPressure: 'LOW',
+    cholesterol_label: 'NORMAL',
+    weight: 'NORMAL',
+    morningMedication: '',
+    afterNoonMedication: '',
+    eveningMedication: ''
   });
-
-  const [formOpen, setFormOpen] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Do something with the form data, like submit to a server
+    // Add your form submission logic here
     console.log(formData);
+
+    try {
+      const response = await axiosInstance.post("/api/v1/algorithms", {
+        ...formData
+      });
+
+      // navigate(`/`);
+    } catch (err) {
+      console.log("err", err);
+    }
   };
+
   return (
     <div className="services-page">
       <h1>Our Services</h1>
@@ -65,92 +75,113 @@ const ServicesPage = () => {
       </div>
 
       {formOpen && (
-        <form
-          ref={targetRef}
-          id="diabetes-form"
-          className="form-container"
-          onSubmit={handleSubmit}
-        >
-          <label>
+        <form onSubmit={handleSubmit} className="form-container">
+          <label className="form-label">
             Age:
             <input
-              type="text"
+              type="number"
               name="age"
               value={formData.age}
               onChange={handleChange}
+              required
               className="form-input"
             />
           </label>
-          <br />
-          <label>
+
+          <label className="form-label">
             Medicine:
             <input
               type="text"
               name="medicine"
               value={formData.medicine}
               onChange={handleChange}
+              required
               className="form-input"
             />
           </label>
-          <br />
-          <label>
-            Diabetes:
-            <input
-              type="text"
-              name="diabetes"
-              value={formData.diabetes}
+
+          <label className="form-label">
+            Blood Pressure:
+            <select
+              name="bloodPressure"
+              value={formData.bloodPressure}
               onChange={handleChange}
+              required
               className="form-input"
-            />
+            >
+              <option value="LOW">LOW</option>
+              <option value="NORMAL">NORMAL</option>
+              <option value="HIGH">HIGH</option>
+              <option value="UNKNOWN">UNKNOWN</option>
+            </select>
           </label>
-          <br />
-          <label>
-            Age Status:
-            <input
-              type="text"
-              name="ageStatus"
-              value={formData.ageStatus}
+
+          <label className="form-label">
+            Cholesterol Label:
+            <select
+              name="cholesterol_label"
+              value={formData.cholesterol_label}
               onChange={handleChange}
+              required
               className="form-input"
-            />
+            >
+              <option value="NORMAL">NORMAL</option>
+              <option value="HIGH">HIGH</option>
+            </select>
           </label>
-          <br />
-          <label>
+
+          <label className="form-label">
+            Weight:
+            <select
+              name="weight"
+              value={formData.weight}
+              onChange={handleChange}
+              required
+              className="form-input"
+            >
+              <option value="NORMAL">NORMAL</option>
+              <option value="OVERWEIGHT">OVERWEIGHT</option>
+              <option value="OBESITY">OBESITY</option>
+            </select>
+          </label>
+
+          <label className="form-label">
             Morning Medication:
             <input
-              type="text"
+              type="date"
               name="morningMedication"
               value={formData.morningMedication}
               onChange={handleChange}
+              required
               className="form-input"
             />
           </label>
-          <br />
-          <label>
+
+          <label className="form-label">
             Afternoon Medication:
             <input
-              type="text"
+              type="date"
               name="afterNoonMedication"
               value={formData.afterNoonMedication}
               onChange={handleChange}
+              required
               className="form-input"
             />
           </label>
-          <br />
-          <label>
+
+          <label className="form-label">
             Evening Medication:
             <input
-              type="text"
+              type="date"
               name="eveningMedication"
               value={formData.eveningMedication}
               onChange={handleChange}
+              required
               className="form-input"
             />
           </label>
-          <br />
-          <button type="submit" className="form-button">
-            Submit
-          </button>
+
+          <button type="submit" className="submit-button">Submit</button>
         </form>
       )}
     </div>
