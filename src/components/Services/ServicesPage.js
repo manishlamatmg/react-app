@@ -44,6 +44,10 @@ const ServicesPage = () => {
     try {
       const response = await axiosInstance.post("/api/v1/algorithms", {
         ...formData
+      }, {
+        headers: {
+          "Authorization": "Bearer " + localStorage.getItem("user")
+        }
       });
 
       // navigate(`/`);
