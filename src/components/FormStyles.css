@@ -23,7 +23,7 @@
 .submit-button {
     width: 100%;
     padding: 10px;
-    background-color: #007bff;
+    background-color: #48a759;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -31,5 +31,15 @@
 }
 
 .submit-button:hover {
-    background-color: #0056b3;
+    background-color: #3d9a75;
+}
+
+
+.formm h1{
+    color: red;
+    text-align:center;
+    font-size: 3rem;
+    position: relative;
+   right: 1rem;
+    padding: 4rem;
 }

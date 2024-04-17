@@ -1,48 +1,59 @@
-import React, { useState } from 'react';
-import './resetPage.css'; // Import your CSS file
+import React, { useState } from "react";
+import "./resetPage.css"; // Import your CSS file
 import axiosInstance from "../../requests";
 import { Link, useNavigate } from "react-router-dom";
+import image from "../../assets/a.png"
 
 const ResetPassword = () => {
   // State variables for token, password, and error messages
-  const [token, setToken] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+  const [token, setToken] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
 
   // Function to handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     if (!token || !password || !confirmPassword) {
-      setErrorMessage('Please fill out all fields');
+      setErrorMessage("Please fill out all fields");
       return;
     }
     if (password !== confirmPassword) {
-      setErrorMessage('Passwords do not match');
+      setErrorMessage("Passwords do not match");
       return;
     }
     // Reset error message if all fields are provided and passwords match
-    setErrorMessage('');
+    setErrorMessage("");
     // Add your logic to handle the reset password request here
 
     try {
-      const response = await axiosInstance.post("/api/v1/passwords/resetPassword", {
-        token,
-        password
-      });
+      const response = await axiosInstance.post(
+        "/api/v1/passwords/resetPassword",
+        {
+          token,
+          password,
+        }
+      );
 
       alert("Password reset successful");
-      navigate('/loginPage');
+      navigate("/loginPage");
     } catch (err) {
       console.log("err", err);
+
+      if (err.response.status === 400) {
+        alert(err?.response?.data);
+      }
     }
   };
 
   return (
     <div className="reset-password-container">
+      <div className="image-container">
+        <img src={image} alt="apple_image" />
+      </div>
       <h2>Reset Password</h2>
       <form onSubmit={handleSubmit}>
         <div className="form-group">

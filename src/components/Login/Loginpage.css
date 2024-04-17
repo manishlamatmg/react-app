@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
+  /* height: 70vh; */
   width: 100vw;
   position: relative;
 
@@ -32,7 +32,7 @@
   margin-left: 20;
   /* Align to the left */
   position: relative;
-  height: 600px;
+   height: 590px;
   
 }
 .input-container{

@@ -1,18 +1,20 @@
 import axiosInstance from "../requests";
-import "./FormStyles.css"
+import "./FormStyles.css";
+import SweetAlert2 from "react-sweetalert2";
 
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const Form = () => {
   const [formData, setFormData] = useState({
-    phoneNumber: '',
-    permanentAddress: '',
-    localAddress: '',
-    district: '',
-    userName: '',
-    email: '',
-    message: ''
+    phoneNumber: "",
+    permanentAddress: "",
+    localAddress: "",
+    district: "",
+    userName: "",
+    email: "",
+    message: "",
   });
+  const [swalProps, setSwalProps] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,16 +27,24 @@ const Form = () => {
     console.log(formData);
 
     try {
-      const response = await axiosInstance.post("/api/v1/contacts", {
-        ...formData
-      }, {
-        headers: {
-          "Authotization": "Bearer " + localStorage.getItem("user")
+      const response = await axiosInstance.post(
+        "/api/v1/contacts",
+        {
+          ...formData,
+        },
+        {
+          headers: {
+            Authotization: "Bearer " + localStorage.getItem("user"),
+          },
         }
-      }
       );
 
-      alert("Your message has been sent to our admins");
+      // alert("Your message has been sent to our admins");
+      setSwalProps({
+        show: true,
+        title: "Message Received",
+        text: "Your message has been sent to our admins",
+      });
 
       // navigate(`/`);
     } catch (err) {
@@ -43,7 +53,16 @@ const Form = () => {
   };
 
   return (
-    < div className="formm-container">
+    <div className="formm-container">
+      <SweetAlert2
+        {...swalProps}
+        onResolve={(result) => {
+          setSwalProps({});
+        }}
+        didClose={() => {
+          setSwalProps({});
+        }}
+      />
       <div className="formm">
         <h1>Connect with us !</h1>
         <form onSubmit={handleSubmit} className="form-container">
@@ -131,14 +150,13 @@ const Form = () => {
             />
           </label>
 
-          <button type="submit" className="submit-button">Submit</button>
+          <button type="submit" className="submit-buttonn">
+            Submit
+          </button>
         </form>
-
-
       </div>
     </div>
-  )
+  );
+};
 
-}
-
-export default Form
+export default Form;

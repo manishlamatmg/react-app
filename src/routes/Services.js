@@ -13,7 +13,7 @@ const Services = () => {
       <Navbar/>
       <HeroImg2  heading="Encompass a range of services" text="To support the well-being, safety, and independence of older adults"/>
       
-      <ServicesCard/>
+      {/* <ServicesCard/> */}
       <ServicesPage/>
       <Footer/>
     </div>

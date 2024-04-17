@@ -18,7 +18,7 @@ const HomeImg = () => {
         <p className='image-p'>Providing healthy quality of life to Elders.</p>
         <div className="btnn1">
 
-        <Link to="/services">Explore Services<img src={arrow} alt=""/></Link>
+        <Link to="/services">Explore Service<img src={arrow} alt=""/></Link>
 
   
         </div>

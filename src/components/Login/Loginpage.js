@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Loginpage.css"; // Import the CSS file for styling
 import image from "../../assets/e.png";
 import { Link, useNavigate } from "react-router-dom";
 import axiosInstance from "../../requests";
 import Navbar from "../Navbar";
 import SignUpForm from "../SignUp/SignUpPage";
+import { AuthContext } from "../../App";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const auth = useContext(AuthContext);
 
   const [signupModal, setSignupModal] = useState(false);
 
@@ -35,10 +37,14 @@ const Login = () => {
       });
 
       localStorage.setItem("user", response.data.token);
+      auth.setLoggedIn(true);
 
       navigate(`/`);
+      alert("Successfully logged In");
+      
     } catch (err) {
       console.log("err", err);
+      alert("User didn't not exist");
     }
   };
 

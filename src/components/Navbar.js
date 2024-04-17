@@ -1,12 +1,17 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./NavbarStyles.css";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { AuthContext } from "../App.js";
 
 const Navbar = (props) => {
   const { noScroll = false } = props;
   const { pathname } = useLocation();
+  const auth = useContext(AuthContext);
+  console.log("loggedin",auth.loggedIn)
+
+  const navigate = useNavigate();
 
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
@@ -43,18 +48,29 @@ const Navbar = (props) => {
         <li className={pathname === "/blogs" ? "active" : ""}>
           <Link to="/blogs">Blogs</Link>
         </li>
-        <li className={pathname === "/services" ? "active" : ""}>
-          <Link to="/services">Services</Link>
+        <li className={pathname === "/about" ? "active" : ""}>
+          <Link to="/about">About</Link>
         </li>
-        
+        {auth.loggedIn && (
+          <li className={pathname === "/services" ? "active" : ""}>
+            <Link to="/services">Services</Link>
+          </li>
+        )}
+
         <li className={pathname === "/contact" ? "active" : ""}>
           <Link to="/contact">Contact</Link>
         </li>
-        <li>
-          <button className="btnn">
-            <Link to="/loginPage">Login</Link>
-          </button>
-        </li>
+        {!auth.loggedIn ? (
+          <li>
+            <button className="btnn">
+              <Link to="/loginPage">Login</Link>
+            </button>
+          </li>
+        ) : (
+          <li>
+            <button className="btnn" onClick={() => { auth.setLoggedIn(false); navigate("/") }}>Logout</button>
+          </li>
+        )}
       </ul>
 
       <div className="hambuger" onClick={handleClick}>

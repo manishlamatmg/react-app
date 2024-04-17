@@ -2,13 +2,14 @@ import React, { useState, useRef } from "react";
 import ServicesCard from "./ServicesCard";
 import "./servicepage.css";
 import axiosInstance from "../../requests";
+import SweetAlert2 from "react-sweetalert2";
 
 const ServicesPage = () => {
   const scrollToRef = (ref) => {
     setTimeout(() => {
       if (ref.current) {
         window.scrollTo({
-          top: ref.current.offsetTop,
+          top: ref.current.offsetTop - 200,
           behavior: "smooth", // Optional: smooth scrolling behavior
         });
       }
@@ -16,19 +17,20 @@ const ServicesPage = () => {
   };
 
   const [formOpen, setFormOpen] = useState(false);
+  const [swalProps, setSwalProps] = useState({});
 
   // Create a ref for the element you want to scroll to
   const targetRef = useRef(null);
 
   const [formData, setFormData] = useState({
-    age: '',
-    medicine: '',
-    bloodPressure: 'LOW',
-    cholesterol_label: 'NORMAL',
-    weight: 'NORMAL',
-    morningMedication: '',
-    afterNoonMedication: '',
-    eveningMedication: ''
+    age: "",
+    medicine: "",
+    bloodPressure: "LOW",
+    cholesterol_label: "NORMAL",
+    weight: "NORMAL",
+    morningMedication: "",
+    afterNoonMedication: "",
+    eveningMedication: "",
   });
 
   const handleChange = (e) => {
@@ -43,14 +45,21 @@ const ServicesPage = () => {
 
     try {
       const response = await axiosInstance.post("/api/v1/algorithms", {
-        ...formData
-      }, {
-        headers: {
-          "Authorization": "Bearer " + localStorage.getItem("user")
-        }
+        ...formData,
+        morningMedication: `${formData?.morningMedication}:00`,
+        afterNoonMedication: `${formData?.afterNoonMedication}:00`,
+        eveningMedication: `${formData?.eveningMedication}:00`,
       });
 
       // navigate(`/`);
+
+      // alert(response?.data?.message);
+
+      setSwalProps({
+        show: true,
+        title: "We suggest that",
+        text: response?.data?.message,
+      });
     } catch (err) {
       console.log("err", err);
     }
@@ -58,28 +67,40 @@ const ServicesPage = () => {
 
   return (
     <div className="services-page">
-      <h1>Our Services</h1>
+      <SweetAlert2
+        {...swalProps}
+        onResolve={(result) => {
+          setSwalProps({});
+        }}
+        didClose={() => {
+          setSwalProps({});
+        }}
+      />
+      <h1 style={{ marginTop: "100px", color: "black",textAlign:"center" }}></h1>
       <div className="service-list">
-        <ServicesCard
+        {/* <ServicesCard
           title="Companionship"
           description="We provide companionship services to enhance the well-being of seniors."
         />
         <ServicesCard
           title="Home Care"
           description="Our home care services ensure seniors receive the support they need in their own homes."
-        />
+        /> */}
         <ServicesCard
+          image={
+            "https://media.nutrition.org/wp-content/uploads/2017/08/myplate.jpg"
+          }
           onClick={() => {
             setFormOpen(true);
             scrollToRef(targetRef);
           }}
-          title="Medical Support"
-          description="We offer medical support services to address the health needs of seniors."
+          title=" Service"
+          
         />
       </div>
 
       {formOpen && (
-        <form onSubmit={handleSubmit} className="form-container">
+        <form ref={targetRef} onSubmit={handleSubmit} className="form-container">
           <label className="form-label">
             Age:
             <input
@@ -152,7 +173,7 @@ const ServicesPage = () => {
           <label className="form-label">
             Morning Medication:
             <input
-              type="date"
+              type="time"
               name="morningMedication"
               value={formData.morningMedication}
               onChange={handleChange}
@@ -164,7 +185,7 @@ const ServicesPage = () => {
           <label className="form-label">
             Afternoon Medication:
             <input
-              type="date"
+              type="time"
               name="afterNoonMedication"
               value={formData.afterNoonMedication}
               onChange={handleChange}
@@ -176,7 +197,7 @@ const ServicesPage = () => {
           <label className="form-label">
             Evening Medication:
             <input
-              type="date"
+              type="time"
               name="eveningMedication"
               value={formData.eveningMedication}
               onChange={handleChange}
@@ -185,7 +206,9 @@ const ServicesPage = () => {
             />
           </label>
 
-          <button type="submit" className="submit-button">Submit</button>
+          <button type="submit" className="submit-button">
+            Submit
+          </button>
         </form>
       )}
     </div>

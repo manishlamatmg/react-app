@@ -48,6 +48,8 @@ const SignUpForm = (props) => {
 
       navigate("/loginPage");
       props.onClose?.();
+      
+      alert("Your account has been created. Check your mail!");
     } catch (err) {
       console.log("err", err);
     }
